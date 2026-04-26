@@ -1,160 +1,73 @@
 <!DOCTYPE html>
-<html lang="ta">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohammadu Rifdi | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Hind+Madurai:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #0073b1;
+            --primary: #0073b1; /* Professional Blue */
             --secondary: #005582;
             --accent: #05c46b;
             --dark: #1e272e;
-            --light: #f5f6fa;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --text-main: #2d3436;
+            --text-muted: #636e72;
         }
 
-        body {
-            font-family: 'Poppins', 'Hind Madurai', sans-serif;
-            margin: 0;
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-        }
+        * { box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; margin: 0; background-color: var(--light-bg); color: var(--text-main); line-height: 1.6; scroll-behavior: smooth; }
 
-        /* Header & Navigation */
-        nav {
-            background: white;
-            padding: 15px 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
-        nav a { text-decoration: none; color: var(--dark); margin-left: 20px; font-weight: 500; transition: 0.3s; }
-        nav a:hover { color: var(--primary); }
+        /* Navigation */
+        nav { background: var(--white); padding: 1rem 10%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.05); }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); letter-spacing: -1px; }
+        nav .links a { text-decoration: none; color: var(--text-main); margin-left: 25px; font-weight: 500; transition: 0.3s; }
+        nav .links a:hover { color: var(--primary); }
 
         /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
-            color: white;
-            padding: 100px 10%;
-            text-align: center;
-            border-bottom-left-radius: 50% 10%;
-            border-bottom-right-radius: 50% 10%;
-        }
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%); color: var(--white); padding: 100px 10%; text-align: center; }
+        .profile-container { position: relative; display: inline-block; }
+        .profile-img { width: 180px; height: 180px; border-radius: 50%; border: 6px solid rgba(255,255,255,0.2); object-fit: cover; margin-bottom: 20px; }
+        .hero h1 { font-size: 3rem; margin: 10px 0; font-weight: 700; }
+        .hero p { font-size: 1.25rem; opacity: 0.9; max-width: 800px; margin: 0 auto 30px auto; font-weight: 300; }
 
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 5px solid white;
-            object-fit: cover;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .hero h1 { font-size: 2.8rem; margin: 10px 0; }
-        .hero p { font-size: 1.2rem; opacity: 0.9; font-weight: 300; }
-
-        /* Container Section */
-        .container { max-width: 1100px; margin: -50px auto 50px auto; padding: 0 20px; }
-
-        .card {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            margin-bottom: 40px;
-        }
-
-        h2 { 
-            color: var(--primary); 
-            border-left: 5px solid var(--primary); 
-            padding-left: 15px; 
-            margin-bottom: 25px; 
-            font-size: 1.8rem;
-        }
+        /* Main Container */
+        .container { max-width: 1100px; margin: -60px auto 60px auto; padding: 0 20px; }
+        .card { background: var(--white); padding: 45px; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.04); margin-bottom: 40px; }
+        
+        h2 { color: var(--primary); font-size: 1.8rem; margin-bottom: 25px; display: flex; align-items: center; gap: 15px; }
+        h2::after { content: ""; height: 2px; flex-grow: 1; background: #eee; }
 
         /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .skill-card { background: #f1f5f9; padding: 25px; border-radius: 16px; text-align: center; transition: 0.3s; border: 1px solid transparent; }
+        .skill-card:hover { border-color: var(--primary); transform: translateY(-5px); background: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .skill-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
+        .skill-card h4 { margin: 0; font-size: 1.1rem; }
 
-        .skill-item {
-            background: #f8fafc;
-            padding: 15px;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid #e2e8f0;
-            transition: 0.3s;
-        }
+        /* Projects */
+        .project-item { border: 1px solid #eef2f6; border-radius: 20px; padding: 30px; margin-top: 20px; transition: 0.3s; position: relative; overflow: hidden; }
+        .project-item:hover { border-color: var(--primary); }
+        .project-badge { position: absolute; top: 20px; right: 20px; background: #e0f2fe; color: var(--primary); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
 
-        .skill-item:hover { border-color: var(--primary); background: #eef2f6; }
-        .skill-item i { font-size: 2rem; color: var(--primary); margin-bottom: 10px; }
-
-        /* Project Section */
-        .project-card {
-            border: 1px solid #eee;
-            border-radius: 15px;
-            padding: 25px;
-            margin-top: 20px;
-            background: #fff;
-            transition: 0.3s;
-        }
-
-        .project-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-            margin-top: 15px;
-        }
-
-        .btn:hover { background: var(--secondary); transform: scale(1.05); }
+        /* Button */
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 14px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s; border: none; cursor: pointer; }
+        .btn:hover { background: var(--secondary); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,115,177,0.3); }
 
         /* Contact Section */
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
+        .contact-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 30px; }
+        .contact-link { text-decoration: none; color: var(--text-main); display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 1.1rem; transition: 0.2s; }
+        .contact-link:hover { color: var(--primary); }
 
-        .contact-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: 0.3s;
-        }
-
-        .contact-links a:hover { color: var(--primary); }
-
-        footer { text-align: center; padding: 40px; color: var(--text-light); border-top: 1px solid #eee; }
+        footer { text-align: center; padding: 50px; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid #eee; }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            nav { flex-direction: column; padding: 20px; }
-            nav div { margin-top: 15px; }
+            .hero h1 { font-size: 2.2rem; }
+            nav { padding: 1rem 5%; }
+            .links { display: none; } /* Mobile menu can be added later */
         }
     </style>
 </head>
@@ -162,74 +75,102 @@
 
 <nav>
     <div class="logo">M. RIFDI</div>
-    <div>
-        <a href="#about">அறிமுகம்</a>
-        <a href="#skills">திறமைகள்</a>
-        <a href="#projects">திட்டங்கள்</a>
-        <a href="#contact">தொடர்பு</a>
+    <div class="links">
+        <a href="#about">About</a>
+        <a href="#skills">Expertise</a>
+        <a href="#projects">Portfolio</a>
+        <a href="#contact">Contact</a>
     </div>
 </nav>
 
 <section class="hero">
-    <img src="https://media.licdn.com/dms/image/v2/D5603AQF3o6h1i1v1_A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718254452174?e=1743033600&v=beta&t=7u7u8u7u8u7u8u7u8u7u8u7u8u7u8u7u8u" alt="Mohammadu Rifdi" class="profile-img">
+    <div class="profile-container">
+        <img src="https://media.licdn.com/dms/image/v2/D5603AQF3o6h1i1v1_A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718254452174?e=1743033600&v=beta&t=7u7u8u7u8u7u8u7u8u7u8u7u8u7u8u7u8u" alt="Mohammadu Rifdi" class="profile-img">
+    </div>
     <h1>Mohammadu Riyal Muhammad Rifdi</h1>
-    <p>IT Specialist (HND) | Arabic AI Trainer | Java Developer</p>
+    <p>IT Specialist (HND) & Arabic Language Scholar | Specialized in Arabic AI Training & Java Development</p>
+    <a href="mailto:mrmrifdhy2000@gmail.com" class="btn">Get In Touch</a>
 </section>
 
 <div class="container">
     
     <section id="about" class="card">
-        <h2><i class="fas fa-user-circle"></i> அறிமுகம் (About Me)</h2>
-        <p>நான் ஒரு தகவல் தொழில்நுட்ப (IT) நிபுணர் மற்றும் அரபு மொழி வல்லுநர். <b>HND in IT</b> மற்றும் <b>B.A. in Arabic</b> முடித்துள்ள நான், தொழில்நுட்பத்தையும் மொழியையும் இணைக்கும் பணிகளில் (AI Training, Technical Translation) மிகுந்த ஆர்வம் கொண்டவன். தற்போது AI மாடல்களுக்கு அரபு மொழியில் பயிற்சியளிக்கும் (RLHF) பணிகளில் ஈடுபட்டு வருகிறேன்.</p>
+        <h2><i class="fas fa-id-card"></i> Professional Summary</h2>
+        <p>I am a unique talent bridging the gap between high-level technology and linguistic scholarship. With a <b>Higher National Diploma (HND) in IT</b> and a 10-year background in <b>Arabic Language & Shari’ah</b>, I offer a specialized skill set for the global AI industry. My expertise lies in <b>RLHF (Reinforcement Learning from Human Feedback)</b>, Arabic data evaluation, and software development using Java.</p>
     </section>
 
     <section id="skills" class="card">
-        <h2><i class="fas fa-tools"></i> திறமைகள் (Skills)</h2>
+        <h2><i class="fas fa-laptop-code"></i> Core Expertise</h2>
         <div class="skills-grid">
-            <div class="skill-item"><i class="fab fa-java"></i><br><b>Java Development</b></div>
-            <div class="skill-item"><i class="fas fa-language"></i><br><b>Arabic AI Training</b></div>
-            <div class="skill-item"><i class="fas fa-database"></i><br><b>SQL & Database</b></div>
-            <div class="skill-item"><i class="fas fa-code"></i><br><b>Python (Basics)</b></div>
+            <div class="skill-card">
+                <i class="fas fa-brain"></i>
+                <h4>Arabic AI Training</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">RLHF, Data Annotation & NLP</p>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-java"></i>
+                <h4>Java Development</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Swing, OOP, Database Integration</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-language"></i>
+                <h4>Linguistics</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Arabic Translation & News Reading</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-database"></i>
+                <h4>Database Mgmt</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">SQL & MySQL Workbench</p>
+            </div>
         </div>
-        <p style="margin-top: 20px;"><b>Soft Skills:</b> தலைமைத்துவம் (Leadership), சிறந்த தகவல் தொடர்பு (Communication), மற்றும் மொழிபெயர்ப்புத் திறன் (Translation).</p>
     </section>
 
     <section id="projects" class="card">
-        <h2><i class="fas fa-project-diagram"></i> சிறந்த திட்டங்கள் (Featured Projects)</h2>
-        <div class="project-card">
+        <h2><i class="fas fa-rocket"></i> Featured Projects</h2>
+        <div class="project-item">
+            <span class="project-badge">Java Desktop App</span>
             <h3>Car Rental Management System</h3>
-            <p><b>நோக்கம்:</b> வாகன முன்பதிவு மற்றும் பில்லிங் முறையை தானியக்கமாக்குதல் (Automation).</p>
-            <p><b>தொழில்நுட்பம்:</b> Java Swing, NetBeans, MySQL.</p>
-            <p><b>பங்களிப்பு:</b> முழுமையான கோடிங் (Coding) மற்றும் தரவுத்தள வடிவமைப்பு (Database Design).</p>
-            <a href="https://github.com/rifdi-it" class="btn" target="_blank">View on GitHub</a>
+            <p>A comprehensive system designed to automate vehicle booking, availability tracking, and billing. Developed using <b>Java Swing</b> with a <b>MySQL</b> database.</p>
+            <p><b>Key Features:</b> User Authentication, Automated Invoice Generation, Real-time Inventory Management.</p>
+            <a href="https://github.com/rifdi-it" class="btn" target="_blank" style="padding: 10px 20px; font-size: 0.9rem;">View Repository</a>
         </div>
     </section>
 
     <section class="card">
-        <h2><i class="fas fa-graduation-cap"></i> கல்வி & அனுபவம்</h2>
-        <ul>
-            <li><b>HND in Information Technology</b> - SLIATE</li>
-            <li><b>B.A. in Arabic Language</b> - SEUSL (Final Year)</li>
-            <li><b>Shari’ah & Hafiz-e-Quran</b> (10 Years Degree) - An-Noor Arabic College</li>
-            <li><b>Arabic AI Trainer (Freelance):</b> AI மாடல்களுக்கு துல்லியமான அரபு தரவுகளை வழங்குதல்.</li>
-        </ul>
+        <h2><i class="fas fa-graduation-cap"></i> Education & Achievements</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <div>
+                <h4>Academic Qualifications</h4>
+                <ul style="padding-left: 20px; color: var(--text-muted);">
+                    <li><b>HND in Information Technology</b> - SLIATE</li>
+                    <li><b>B.A. in Arabic Language (Final Year)</b> - SEUSL</li>
+                    <li><b>10-Year Shari’ah Degree & Hafiz-e-Quran</b> - An-Noor Arabic College</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Awards & Recognition</h4>
+                <ul style="padding-left: 20px; color: var(--text-muted);">
+                    <li><b>National Winner:</b> Arabic News Reading Competition</li>
+                    <li><b>National Winner:</b> Arabic-to-Tamil Translation Contest</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <section id="contact" class="card" style="text-align: center;">
-        <h2><i class="fas fa-envelope-open-text"></i> தொடர்புகொள்ள (Contact Information)</h2>
-        <p>நீங்கள் ஒரு சிறந்த திட்டத்திற்காக அல்லது வேலை வாய்ப்பிற்காக என்னை அணுக விரும்பினால்:</p>
-        <div class="contact-links">
-            <a href="mailto:mrmrifdhy2000@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-            <a href="https://www.linkedin.com/in/mohammadu-riyal-muhammad-rifdi-23b184406" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="https://github.com/rifdi-it" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <h2><i class="fas fa-paper-plane"></i> Contact Me</h2>
+        <p>I am open to freelance AI training opportunities, software projects, and technical consultancy.</p>
+        <div class="contact-grid">
+            <a href="mailto:mrmrifdhy2000@gmail.com" class="contact-link"><i class="fas fa-envelope" style="color: #ea4335;"></i> Email</a>
+            <a href="https://www.linkedin.com/in/mohammadu-riyal-muhammad-rifdi-23b184406" class="contact-link" target="_blank"><i class="fab fa-linkedin" style="color: #0073b1;"></i> LinkedIn</a>
+            <a href="https://github.com/rifdi-it" class="contact-link" target="_blank"><i class="fab fa-github" style="color: #333;"></i> GitHub</a>
         </div>
-        <a href="mailto:mrmrifdhy2000@gmail.com" class="btn">மின்னஞ்சல் அனுப்பவும்</a>
     </section>
 
 </div>
 
 <footer>
-    <p>&copy; 2026 Mohammadu Rifdi. All Rights Reserved. <br> Built with <i class="fas fa-heart" style="color:red"></i> using GitHub Pages.</p>
+    <p>&copy; 2026 Mohammadu Rifdi. All Rights Reserved. <br> Powered by GitHub Pages & Professionalism.</p>
 </footer>
 
 </body>
