@@ -1,45 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ta">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammadu Rifdi | Professional Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Mohammadu Rifdi | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Hind+Madurai:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --primary: #0073b1;
+            --secondary: #005582;
+            --accent: #05c46b;
             --dark: #1e272e;
             --light: #f5f6fa;
-            --accent: #05c46b;
         }
 
-        body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); color: var(--dark); scroll-behavior: smooth; }
-        
-        /* Navigation */
-        nav { background: white; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        nav .logo { font-weight: 700; color: var(--primary); font-size: 1.5rem; }
+        body {
+            font-family: 'Poppins', 'Hind Madurai', sans-serif;
+            margin: 0;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        nav {
+            background: white;
+            padding: 15px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
         nav a { text-decoration: none; color: var(--dark); margin-left: 20px; font-weight: 500; transition: 0.3s; }
         nav a:hover { color: var(--primary); }
 
         /* Hero Section */
-        .hero { height: 80vh; background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%); color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; }
-        .hero h1 { font-size: 3rem; margin: 0; }
-        .hero p { font-size: 1.3rem; opacity: 0.9; max-width: 700px; }
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 100px 10%;
+            text-align: center;
+            border-bottom-left-radius: 50% 10%;
+            border-bottom-right-radius: 50% 10%;
+        }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 50px 20px; }
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
 
-        /* Cards */
-        .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 30px; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); }
-        h2 { color: var(--primary); border-bottom: 2px solid var(--primary); display: inline-block; padding-bottom: 5px; margin-bottom: 20px; }
+        .hero h1 { font-size: 2.8rem; margin: 10px 0; }
+        .hero p { font-size: 1.2rem; opacity: 0.9; font-weight: 300; }
 
-        /* Skill Tags */
-        .tag { display: inline-block; background: #dff9fb; color: #130f40; padding: 6px 15px; border-radius: 20px; font-size: 14px; font-weight: 600; margin: 5px; }
+        /* Container Section */
+        .container { max-width: 1100px; margin: -50px auto 50px auto; padding: 0 20px; }
 
-        /* Footer */
-        footer { text-align: center; padding: 30px; background: var(--dark); color: white; }
-        .contact-btn { background: var(--accent); color: white; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 20px; }
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+
+        h2 { 
+            color: var(--primary); 
+            border-left: 5px solid var(--primary); 
+            padding-left: 15px; 
+            margin-bottom: 25px; 
+            font-size: 1.8rem;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-item {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            transition: 0.3s;
+        }
+
+        .skill-item:hover { border-color: var(--primary); background: #eef2f6; }
+        .skill-item i { font-size: 2rem; color: var(--primary); margin-bottom: 10px; }
+
+        /* Project Section */
+        .project-card {
+            border: 1px solid #eee;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 20px;
+            background: #fff;
+            transition: 0.3s;
+        }
+
+        .project-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            margin-top: 15px;
+        }
+
+        .btn:hover { background: var(--secondary); transform: scale(1.05); }
+
+        /* Contact Section */
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .contact-links a:hover { color: var(--primary); }
+
+        footer { text-align: center; padding: 40px; color: var(--text-light); border-top: 1px solid #eee; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            nav { flex-direction: column; padding: 20px; }
+            nav div { margin-top: 15px; }
+        }
     </style>
 </head>
 <body>
@@ -47,56 +163,73 @@
 <nav>
     <div class="logo">M. RIFDI</div>
     <div>
-        <a href="#about">About</a>
-        <a href="#it">IT Skills</a>
-        <a href="#arabic">Arabic AI</a>
-        <a href="#contact">Contact</a>
+        <a href="#about">அறிமுகம்</a>
+        <a href="#skills">திறமைகள்</a>
+        <a href="#projects">திட்டங்கள்</a>
+        <a href="#contact">தொடர்பு</a>
     </div>
 </nav>
 
 <section class="hero">
+    <img src="https://media.licdn.com/dms/image/v2/D5603AQF3o6h1i1v1_A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718254452174?e=1743033600&v=beta&t=7u7u8u7u8u7u8u7u8u7u8u7u8u7u8u7u8u" alt="Mohammadu Rifdi" class="profile-img">
     <h1>Mohammadu Riyal Muhammad Rifdi</h1>
-    <p>Bridging Technology & Linguistics: IT Specialist, Arabic Scholar, and AI Trainer</p>
-    <a href="mailto:mrmrifdhy2000@gmail.com" class="contact-btn">Hire Me Now</a>
+    <p>IT Specialist (HND) | Arabic AI Trainer | Java Developer</p>
 </section>
 
 <div class="container">
     
     <section id="about" class="card">
-        <h2>Professional Profile</h2>
-        <p>I am a multifaceted professional with a <b>Higher National Diploma (HND) in Information Technology</b> and a deep academic foundation in <b>Arabic Language and Shari’ah</b>. With over 10 years of specialized religious and linguistic study, combined with modern technical skills, I specialize in <b>AI Training (RLHF)</b> and software development.</p>
+        <h2><i class="fas fa-user-circle"></i> அறிமுகம் (About Me)</h2>
+        <p>நான் ஒரு தகவல் தொழில்நுட்ப (IT) நிபுணர் மற்றும் அரபு மொழி வல்லுநர். <b>HND in IT</b> மற்றும் <b>B.A. in Arabic</b> முடித்துள்ள நான், தொழில்நுட்பத்தையும் மொழியையும் இணைக்கும் பணிகளில் (AI Training, Technical Translation) மிகுந்த ஆர்வம் கொண்டவன். தற்போது AI மாடல்களுக்கு அரபு மொழியில் பயிற்சியளிக்கும் (RLHF) பணிகளில் ஈடுபட்டு வருகிறேன்.</p>
     </section>
 
-    <section id="it" class="card">
-        <h2>IT & Software Development</h2>
-        <h3><i class="fas fa-car"></i> Car Rental Management System</h3>
-        <p>A flagship project developed using <b>Java Swing</b>. This application automates vehicle inventory, customer billing, and booking management with a secure database backend.</p>
-        <div class="tag">Java</div> <div class="tag">MySQL</div> <div class="tag">OOP</div> <div class="tag">NetBeans</div>
+    <section id="skills" class="card">
+        <h2><i class="fas fa-tools"></i> திறமைகள் (Skills)</h2>
+        <div class="skills-grid">
+            <div class="skill-item"><i class="fab fa-java"></i><br><b>Java Development</b></div>
+            <div class="skill-item"><i class="fas fa-language"></i><br><b>Arabic AI Training</b></div>
+            <div class="skill-item"><i class="fas fa-database"></i><br><b>SQL & Database</b></div>
+            <div class="skill-item"><i class="fas fa-code"></i><br><b>Python (Basics)</b></div>
+        </div>
+        <p style="margin-top: 20px;"><b>Soft Skills:</b> தலைமைத்துவம் (Leadership), சிறந்த தகவல் தொடர்பு (Communication), மற்றும் மொழிபெயர்ப்புத் திறன் (Translation).</p>
     </section>
 
-    <section id="arabic" class="card">
-        <h2>Arabic Linguistics & AI Training</h2>
-        <p>Expert in <b>Reinforcement Learning from Human Feedback (RLHF)</b> for Arabic AI models. Leveraging my 10-year Shari’ah degree to provide culturally and linguistically accurate data evaluation.</p>
+    <section id="projects" class="card">
+        <h2><i class="fas fa-project-diagram"></i> சிறந்த திட்டங்கள் (Featured Projects)</h2>
+        <div class="project-card">
+            <h3>Car Rental Management System</h3>
+            <p><b>நோக்கம்:</b> வாகன முன்பதிவு மற்றும் பில்லிங் முறையை தானியக்கமாக்குதல் (Automation).</p>
+            <p><b>தொழில்நுட்பம்:</b> Java Swing, NetBeans, MySQL.</p>
+            <p><b>பங்களிப்பு:</b> முழுமையான கோடிங் (Coding) மற்றும் தரவுத்தள வடிவமைப்பு (Database Design).</p>
+            <a href="https://github.com/rifdi-it" class="btn" target="_blank">View on GitHub</a>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2><i class="fas fa-graduation-cap"></i> கல்வி & அனுபவம்</h2>
         <ul>
-            <li><b>Hafiz-e-Quran</b> & Shari’ah Scholar (An-Noor Arabic College)</li>
-            <li><b>Final Year B.A. in Arabic Language</b> (SEUSL)</li>
-            <li>Winner of National level <b>News Reading & Translation</b> competitions</li>
+            <li><b>HND in Information Technology</b> - SLIATE</li>
+            <li><b>B.A. in Arabic Language</b> - SEUSL (Final Year)</li>
+            <li><b>Shari’ah & Hafiz-e-Quran</b> (10 Years Degree) - An-Noor Arabic College</li>
+            <li><b>Arabic AI Trainer (Freelance):</b> AI மாடல்களுக்கு துல்லியமான அரபு தரவுகளை வழங்குதல்.</li>
         </ul>
-        <div class="tag">Arabic NLP</div> <div class="tag">RLHF Training</div> <div class="tag">Translation</div> <div class="tag">Islamic Finance Knowledge</div>
     </section>
 
     <section id="contact" class="card" style="text-align: center;">
-        <h2>Let's Connect</h2>
-        <p>Available for Freelance AI Training, Technical Translation, and IT Consultancy.</p>
-        <p><i class="fas fa-envelope"></i> mrmrifdhy2000@gmail.com</p>
-        <p><i class="fab fa-linkedin"></i> https://www.linkedin.com/in/mohammadu-riyal-muhammad-rifdi-23b184406 </p>
-        <p><i class="fab fa-github"></i> https://github.com/rifdi-it</p>
+        <h2><i class="fas fa-envelope-open-text"></i> தொடர்புகொள்ள (Contact Information)</h2>
+        <p>நீங்கள் ஒரு சிறந்த திட்டத்திற்காக அல்லது வேலை வாய்ப்பிற்காக என்னை அணுக விரும்பினால்:</p>
+        <div class="contact-links">
+            <a href="mailto:mrmrifdhy2000@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://www.linkedin.com/in/mohammadu-riyal-muhammad-rifdi-23b184406" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/rifdi-it" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+        <a href="mailto:mrmrifdhy2000@gmail.com" class="btn">மின்னஞ்சல் அனுப்பவும்</a>
     </section>
 
 </div>
 
 <footer>
-    <p>&copy; 2026 Mohammadu Rifdi | Built with <i class="fas fa-heart" style="color:red"></i> using GitHub Pages</p>
+    <p>&copy; 2026 Mohammadu Rifdi. All Rights Reserved. <br> Built with <i class="fas fa-heart" style="color:red"></i> using GitHub Pages.</p>
 </footer>
 
 </body>
