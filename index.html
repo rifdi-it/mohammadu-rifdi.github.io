@@ -4,148 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohammadu Rifdi | Professional Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #0073b1; /* LinkedIn Blue */
-            --secondary-color: #005582;
-            --text-dark: #2d3436;
-            --text-light: #636e72;
-            --bg-light: #f4f7f9;
+            --primary: #0073b1;
+            --dark: #1e272e;
+            --light: #f5f6fa;
+            --accent: #05c46b;
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.7;
-            color: var(--text-dark);
-            background-color: var(--bg-light);
-            margin: 0;
-            padding: 0;
-        }
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); color: var(--dark); scroll-behavior: smooth; }
+        
+        /* Navigation */
+        nav { background: white; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav .logo { font-weight: 700; color: var(--primary); font-size: 1.5rem; }
+        nav a { text-decoration: none; color: var(--dark); margin-left: 20px; font-weight: 500; transition: 0.3s; }
+        nav a:hover { color: var(--primary); }
 
-        header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
+        /* Hero Section */
+        .hero { height: 80vh; background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%); color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; }
+        .hero h1 { font-size: 3rem; margin: 0; }
+        .hero p { font-size: 1.3rem; opacity: 0.9; max-width: 700px; }
 
-        header h1 { margin: 0; font-size: 2.5rem; letter-spacing: -1px; }
-        header p { font-size: 1.2rem; opacity: 0.9; font-weight: 300; margin-top: 10px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 50px 20px; }
 
-        .container {
-            max-width: 900px;
-            margin: -50px auto 50px auto;
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
+        /* Cards */
+        .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 30px; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        h2 { color: var(--primary); border-bottom: 2px solid var(--primary); display: inline-block; padding-bottom: 5px; margin-bottom: 20px; }
 
-        .section { margin-bottom: 40px; }
-        h2 { 
-            color: var(--primary-color); 
-            border-left: 5px solid var(--primary-color);
-            padding-left: 15px;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
+        /* Skill Tags */
+        .tag { display: inline-block; background: #dff9fb; color: #130f40; padding: 6px 15px; border-radius: 20px; font-size: 14px; font-weight: 600; margin: 5px; }
 
-        .project-card {
-            background: #fff;
-            border: 1px solid #e1e8ed;
-            padding: 20px;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-color);
-        }
-
-        .tag-container { margin-top: 15px; }
-        .tag {
-            display: inline-block;
-            background: #e1f5fe;
-            color: #0288d1;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-            margin-right: 8px;
-            margin-bottom: 8px;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            margin-top: 15px;
-        }
-
-        .btn:hover { background: var(--secondary-color); }
-
-        footer { text-align: center; padding: 20px; color: var(--text-light); font-size: 14px; }
+        /* Footer */
+        footer { text-align: center; padding: 30px; background: var(--dark); color: white; }
+        .contact-btn { background: var(--accent); color: white; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 20px; }
     </style>
 </head>
 <body>
 
-<header>
+<nav>
+    <div class="logo">M. RIFDI</div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#it">IT Skills</a>
+        <a href="#arabic">Arabic AI</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<section class="hero">
     <h1>Mohammadu Riyal Muhammad Rifdi</h1>
-    <p>Arabic AI Trainer • IT Specialist (HND) • Java Developer</p>
-</header>
+    <p>Bridging Technology & Linguistics: IT Specialist, Arabic Scholar, and AI Trainer</p>
+    <a href="mailto:mrmrifdhy2000@gmail.com" class="contact-btn">Hire Me Now</a>
+</section>
 
 <div class="container">
-    <div class="section">
+    
+    <section id="about" class="card">
         <h2>Professional Profile</h2>
-        <p>I am a unique professional blending technical expertise in <b>Information Technology</b> with deep linguistic roots in <b>Arabic Language and Shari’ah</b>. My goal is to advance AI development through high-quality Arabic data training and innovative software solutions.</p>
-    </div>
+        <p>I am a multifaceted professional with a <b>Higher National Diploma (HND) in Information Technology</b> and a deep academic foundation in <b>Arabic Language and Shari’ah</b>. With over 10 years of specialized religious and linguistic study, combined with modern technical skills, I specialize in <b>AI Training (RLHF)</b> and software development.</p>
+    </section>
 
-    <div class="section">
-        <h2>Technical Expertise</h2>
-        <div class="project-card">
-            <h3>Car Rental Management System</h3>
-            <p>Developed a robust desktop application using <b>Java Swing</b> and <b>MySQL</b>. This system features automated billing, vehicle availability tracking, and customer management.</p>
-            <div class="tag-container">
-                <span class="tag">Java</span>
-                <span class="tag">NetBeans</span>
-                <span class="tag">MySQL</span>
-                <span class="tag">OOP</span>
-            </div>
-            <a href="https://github.com/rifdi-it/car-rental-management-system" class="btn">View on GitHub</a>
-        </div>
-    </div>
+    <section id="it" class="card">
+        <h2>IT & Software Development</h2>
+        <h3><i class="fas fa-car"></i> Car Rental Management System</h3>
+        <p>A flagship project developed using <b>Java Swing</b>. This application automates vehicle inventory, customer billing, and booking management with a secure database backend.</p>
+        <div class="tag">Java</div> <div class="tag">MySQL</div> <div class="tag">OOP</div> <div class="tag">NetBeans</div>
+    </section>
 
-    <div class="section">
-        <h2>Linguistic & Academic Background</h2>
+    <section id="arabic" class="card">
+        <h2>Arabic Linguistics & AI Training</h2>
+        <p>Expert in <b>Reinforcement Learning from Human Feedback (RLHF)</b> for Arabic AI models. Leveraging my 10-year Shari’ah degree to provide culturally and linguistically accurate data evaluation.</p>
         <ul>
-            <li><b>B.A. in Arabic Language</b> (Final Year) - SEUSL</li>
-            <li><b>HND in Information Technology</b> - SLIATE</li>
-            <li><b>Shari’ah & Hafiz-e-Quran</b> (10-year Degree) - An-Noor Arabic College</li>
+            <li><b>Hafiz-e-Quran</b> & Shari’ah Scholar (An-Noor Arabic College)</li>
+            <li><b>Final Year B.A. in Arabic Language</b> (SEUSL)</li>
+            <li>Winner of National level <b>News Reading & Translation</b> competitions</li>
         </ul>
-        <div class="tag-container">
-            <span class="tag">AI Training (RLHF)</span>
-            <span class="tag">Arabic Translation</span>
-            <span class="tag">Technical Writing</span>
-        </div>
-    </div>
+        <div class="tag">Arabic NLP</div> <div class="tag">RLHF Training</div> <div class="tag">Translation</div> <div class="tag">Islamic Finance Knowledge</div>
+    </section>
 
-    <div class="section">
+    <section id="contact" class="card" style="text-align: center;">
         <h2>Let's Connect</h2>
-        <p>Looking for a specialized Arabic AI Trainer or a Technical Consultant? Let's discuss how my unique skill set can add value to your project.</p>
-        <a href="rifdimrm2000@gmail.com" class="btn">Contact Me</a>
-    </div>
+        <p>Available for Freelance AI Training, Technical Translation, and IT Consultancy.</p>
+        <p><i class="fas fa-envelope"></i> your.email@example.com</p>
+        <p><i class="fab fa-linkedin"></i> linkedin.com/in/your-profile</p>
+        <p><i class="fab fa-github"></i> github.com/your-username</p>
+    </section>
 
-    <footer>
-        &copy; 2026 Mohammadu Rifdi. Built with GitHub Pages.
-    </footer>
 </div>
+
+<footer>
+    <p>&copy; 2026 Mohammadu Rifdi | Built with <i class="fas fa-heart" style="color:red"></i> using GitHub Pages</p>
+</footer>
 
 </body>
 </html>
