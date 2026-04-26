@@ -3,45 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammadu Rifdi | Portfolio</title>
+    <title>Mohammadu Rifdi | Professional Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: auto; padding: 20px; }
-        header { text-align: center; background: #0073b1; color: white; padding: 40px 20px; border-radius: 10px; }
-        .section { margin-top: 30px; border-bottom: 2px solid #eee; padding-bottom: 20px; }
-        h2 { color: #0073b1; }
-        .tag { background: #e1e9ee; padding: 5px 10px; border-radius: 5px; font-size: 14px; margin-right: 5px; }
+        :root {
+            --primary-color: #0073b1; /* LinkedIn Blue */
+            --secondary-color: #005582;
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+            --bg-light: #f4f7f9;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        header h1 { margin: 0; font-size: 2.5rem; letter-spacing: -1px; }
+        header p { font-size: 1.2rem; opacity: 0.9; font-weight: 300; margin-top: 10px; }
+
+        .container {
+            max-width: 900px;
+            margin: -50px auto 50px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .section { margin-bottom: 40px; }
+        h2 { 
+            color: var(--primary-color); 
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .project-card {
+            background: #fff;
+            border: 1px solid #e1e8ed;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .tag-container { margin-top: 15px; }
+        .tag {
+            display: inline-block;
+            background: #e1f5fe;
+            color: #0288d1;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        .btn:hover { background: var(--secondary-color); }
+
+        footer { text-align: center; padding: 20px; color: var(--text-light); font-size: 14px; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>Mohammadu Riyal Muhammad Rifdi</h1>
-    <p>Arabic AI Trainer | IT Specialist (HND) | Java Developer</p>
+    <p>Arabic AI Trainer • IT Specialist (HND) • Java Developer</p>
 </header>
 
-<div class="section">
-    <h2>Summary</h2>
-    <p>Bridging the gap between Technology and Arabic Linguistics. HND in IT holder and B.A. in Arabic Language student with expertise in AI model training (RLHF) and software development.</p>
-</div>
+<div class="container">
+    <div class="section">
+        <h2>Professional Profile</h2>
+        <p>I am a unique professional blending technical expertise in <b>Information Technology</b> with deep linguistic roots in <b>Arabic Language and Shari’ah</b>. My goal is to advance AI development through high-quality Arabic data training and innovative software solutions.</p>
+    </div>
 
-<div class="section">
-    <h2>Technical Projects</h2>
-    <h3>Car Rental Management System</h3>
-    <p>A desktop application developed using <b>Java Swing</b> and <b>MySQL</b> to automate vehicle booking and billing.</p>
-    <a href="உங்கள்-github-project-link-இங்கே">View on GitHub</a>
-</div>
+    <div class="section">
+        <h2>Technical Expertise</h2>
+        <div class="project-card">
+            <h3>Car Rental Management System</h3>
+            <p>Developed a robust desktop application using <b>Java Swing</b> and <b>MySQL</b>. This system features automated billing, vehicle availability tracking, and customer management.</p>
+            <div class="tag-container">
+                <span class="tag">Java</span>
+                <span class="tag">NetBeans</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">OOP</span>
+            </div>
+            <a href="https://github.com/rifdi-it/car-rental-management-system" class="btn">View on GitHub</a>
+        </div>
+    </div>
 
-<div class="section">
-    <h2>Education & Expertise</h2>
-    <ul>
-        <li><b>HND in Information Technology</b> - SLIATE</li>
-        <li><b>B.A. in Arabic Language</b> - SEUSL (Final Year)</li>
-        <li><b>Shari’ah & Hafiz-e-Quran</b> - An-Noor Arabic College</li>
-    </ul>
-    <p>
-        <span class="tag">Java</span> <span class="tag">Python</span> 
-        <span class="tag">Arabic NLP</span> <span class="tag">AI Training</span>
-    </p>
+    <div class="section">
+        <h2>Linguistic & Academic Background</h2>
+        <ul>
+            <li><b>B.A. in Arabic Language</b> (Final Year) - SEUSL</li>
+            <li><b>HND in Information Technology</b> - SLIATE</li>
+            <li><b>Shari’ah & Hafiz-e-Quran</b> (10-year Degree) - An-Noor Arabic College</li>
+        </ul>
+        <div class="tag-container">
+            <span class="tag">AI Training (RLHF)</span>
+            <span class="tag">Arabic Translation</span>
+            <span class="tag">Technical Writing</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Let's Connect</h2>
+        <p>Looking for a specialized Arabic AI Trainer or a Technical Consultant? Let's discuss how my unique skill set can add value to your project.</p>
+        <a href="rifdimrm2000@gmail.com" class="btn">Contact Me</a>
+    </div>
+
+    <footer>
+        &copy; 2026 Mohammadu Rifdi. Built with GitHub Pages.
+    </footer>
 </div>
 
 </body>
